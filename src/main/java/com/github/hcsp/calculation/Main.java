@@ -1,7 +1,5 @@
 package com.github.hcsp.calculation;
 
-import java.util.Arrays;
-
 public class Main {
 
     /**
@@ -16,16 +14,7 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {
-        int arr[] = {a, b, c};
-        Arrays.sort(arr);
-        int length = arr.length;
-        String result =  String.valueOf(arr[length - 1]);
-        for (int i = length - 2; i >= 0; i--) {
-            result += ">" + arr[i];
-        }
-        return result;
-    }
+    public static String printNumbersInOrder(int a, int b, int c) {}
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
