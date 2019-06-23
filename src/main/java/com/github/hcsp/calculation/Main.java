@@ -13,7 +13,21 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {}
+    public static String printNumbersInOrder(int a, int b, int c) {
+        //用冒泡排序实现对数组进行从大到小排序
+        int arr[]={a,b,c};//定义一个数组，用于存放函数的实参。
+        for (int i = 0; i <=arr.length-1 ; i++) {//第一遍循环次数与实参个数有关
+            for (int j = 0; j <arr.length-i-1 ; j++) {//第二遍循环次数与实参比较次数有关
+                int temp;//定义一个临时变量
+                if(arr[j]<arr[j+1]){
+                    temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+        return (arr[0]+">"+arr[1]+">"+arr[2]);
+    }
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
