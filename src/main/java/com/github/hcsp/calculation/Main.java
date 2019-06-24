@@ -1,8 +1,4 @@
 package com.github.hcsp.calculation;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
     /**
@@ -17,12 +13,7 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {
-        List<Integer> intList = Arrays.asList(a,b,c);
-        Collections.sort(intList);
-        Collections.reverse(intList);
-        return intList.stream().map(String::valueOf).collect(Collectors.joining(">"));
-    }
+    public static String printNumbersInOrder(int a, int b, int c) {}
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
