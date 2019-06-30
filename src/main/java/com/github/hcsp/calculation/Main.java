@@ -13,7 +13,15 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {}
+    public static String printNumbersInOrder(int a, int b, int c) {
+        int[] intArr = {a, b, c};
+        Arrays.sort(intArr);
+        String[] stringArr = new String[intArr.length];
+        for (int i = 0; i < intArr.length; i++) stringArr[i] = String.valueOf(intArr[i]);
+        ArrayList<String> strList = new ArrayList<>(Arrays.asList(stringArr));
+        Collections.reverse(strList);
+        return String.join(">", strList);
+    }
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
