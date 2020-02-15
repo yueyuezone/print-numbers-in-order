@@ -1,7 +1,7 @@
 package com.github.hcsp.calculation;
 
 import java.lang.reflect.Array;
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
     /**
@@ -17,9 +17,28 @@ public class Main {
      * @return 所要求的字符串
      */
     public static String printNumbersInOrder(int a, int b, int c) {
-        int array[] = {a,b,c};
-        Arrays.sort(array);
-        return array[2]+">"+array[1]+">"+array[0];
+        List<Integer> array = new ArrayList<>();
+        array.add(a);
+        array.add(b);
+        array.add(c);
+         Collections.sort(array, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1>o2?-1:o1.equals(o2)?0:1;
+            }
+        });
+         StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < array.size(); i++) {
+          if (stringBuilder.length()==0){
+              stringBuilder.append(array.get(i));
+          } else {
+              stringBuilder.append(">").append(array.get(i));
+          }
+        }
+        return stringBuilder.toString();
+       // int array[] = {a,b,c};
+//        Arrays.sort(array);
+//        return array[2]+">"+array[1]+">"+array[0];
     }
 
     public static void main(String[] args) {
